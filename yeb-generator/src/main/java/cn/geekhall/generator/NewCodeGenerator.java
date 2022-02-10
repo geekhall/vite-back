@@ -1,8 +1,14 @@
 package cn.geekhall.generator;
 
+import com.baomidou.mybatisplus.annotation.FieldFill;
+import com.baomidou.mybatisplus.annotation.IdType;
 import com.baomidou.mybatisplus.generator.FastAutoGenerator;
 import com.baomidou.mybatisplus.generator.config.OutputFile;
+import com.baomidou.mybatisplus.generator.config.StrategyConfig;
+import com.baomidou.mybatisplus.generator.config.rules.NamingStrategy;
 import com.baomidou.mybatisplus.generator.engine.FreemarkerTemplateEngine;
+import com.baomidou.mybatisplus.generator.fill.Column;
+import com.baomidou.mybatisplus.generator.fill.Property;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -38,6 +44,29 @@ public class NewCodeGenerator {
         includes.add("t_salary_adjust");
         includes.add("t_sys_msg");
         includes.add("t_sys_msg_content");
+
+        new StrategyConfig.Builder()
+                .entityBuilder()
+//                .superClass(BaseEntity.class)
+                .disableSerialVersionUID()
+                .enableChainModel()
+                .enableLombok()
+                .enableRemoveIsPrefix()
+                .enableTableFieldAnnotation()
+                .enableActiveRecord()
+                .versionColumnName("version")
+                .versionPropertyName("version")
+                .logicDeleteColumnName("deleted")
+                .logicDeletePropertyName("deleteFlag")
+                .naming(NamingStrategy.no_change)
+                .columnNaming(NamingStrategy.underline_to_camel)
+                .addSuperEntityColumns("id", "created_by", "created_time", "updated_by", "updated_time")
+//                .addIgnoreColumns("age")
+                .addTableFills(new Column("create_time", FieldFill.INSERT))
+                .addTableFills(new Property("updateTime", FieldFill.INSERT_UPDATE))
+                .idType(IdType.AUTO)
+                .formatFileName("%sEntity")
+                .build();
 
         FastAutoGenerator.create("jdbc:mysql://localhost:3316/db_yeb?userUnicode=true&characterEncoding=UTF-8&serverTimezone=Asia/Shanghai", "yeb", "123456")
                 .globalConfig(builder -> {

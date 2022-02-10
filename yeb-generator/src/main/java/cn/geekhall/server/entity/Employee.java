@@ -4,7 +4,7 @@ import com.baomidou.mybatisplus.annotation.IdType;
 import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
 import java.io.Serializable;
-import java.time.LocalDate;
+import java.time.LocalDateTime;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 
@@ -14,7 +14,7 @@ import io.swagger.annotations.ApiModelProperty;
  * </p>
  *
  * @author yiny
- * @since 2022-02-09
+ * @since 2022-02-10
  */
 @TableName("t_employee")
 @ApiModel(value = "Employee对象", description = "")
@@ -22,18 +22,18 @@ public class Employee implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
-    @ApiModelProperty("员工编号")
+    @ApiModelProperty("id")
     @TableId(value = "id", type = IdType.AUTO)
     private Integer id;
 
-    @ApiModelProperty("员工姓名")
+    @ApiModelProperty("姓名")
     private String name;
 
     @ApiModelProperty("性别")
     private String gender;
 
-    @ApiModelProperty("出生日期")
-    private LocalDate birthday;
+    @ApiModelProperty("生日")
+    private LocalDateTime birthday;
 
     @ApiModelProperty("身份证号")
     private String idCard;
@@ -45,7 +45,7 @@ public class Employee implements Serializable {
     private Integer nationId;
 
     @ApiModelProperty("籍贯")
-    private String nativePlace;
+    private String nationPlace;
 
     @ApiModelProperty("政治面貌")
     private Integer politicId;
@@ -53,19 +53,19 @@ public class Employee implements Serializable {
     @ApiModelProperty("邮箱")
     private String email;
 
-    @ApiModelProperty("电话号码")
+    @ApiModelProperty("手机")
     private String phone;
 
-    @ApiModelProperty("联系地址")
+    @ApiModelProperty("地址")
     private String address;
 
-    @ApiModelProperty("所属部门")
+    @ApiModelProperty("部门编号")
     private Integer departmentId;
 
-    @ApiModelProperty("职称ID")
+    @ApiModelProperty("职称id")
     private Integer jobLevelId;
 
-    @ApiModelProperty("职位ID")
+    @ApiModelProperty("职位id")
     private Integer posId;
 
     @ApiModelProperty("聘用形式")
@@ -81,33 +81,33 @@ public class Employee implements Serializable {
     private String school;
 
     @ApiModelProperty("入职日期")
-    private LocalDate beginDate;
+    private LocalDateTime beginDate;
 
     @ApiModelProperty("在职状态")
     private String workState;
 
     @ApiModelProperty("工号")
-    private String workID;
+    private String workId;
 
     @ApiModelProperty("合同期限")
     private Double contractTerm;
 
     @ApiModelProperty("转正日期")
-    private LocalDate conversionTime;
+    private LocalDateTime conversionTime;
 
     @ApiModelProperty("离职日期")
-    private LocalDate notWorkDate;
+    private LocalDateTime notWorkTract;
 
     @ApiModelProperty("合同起始日期")
-    private LocalDate beginContract;
+    private LocalDateTime beginContract;
 
     @ApiModelProperty("合同终止日期")
-    private LocalDate endContract;
+    private LocalDateTime endContract;
 
     @ApiModelProperty("工龄")
     private Integer workAge;
 
-    @ApiModelProperty("工资账套ID")
+    @ApiModelProperty("工资账套id")
     private Integer salaryId;
 
     public Integer getId() {
@@ -131,11 +131,11 @@ public class Employee implements Serializable {
     public void setGender(String gender) {
         this.gender = gender;
     }
-    public LocalDate getBirthday() {
+    public LocalDateTime getBirthday() {
         return birthday;
     }
 
-    public void setBirthday(LocalDate birthday) {
+    public void setBirthday(LocalDateTime birthday) {
         this.birthday = birthday;
     }
     public String getIdCard() {
@@ -159,12 +159,12 @@ public class Employee implements Serializable {
     public void setNationId(Integer nationId) {
         this.nationId = nationId;
     }
-    public String getNativePlace() {
-        return nativePlace;
+    public String getNationPlace() {
+        return nationPlace;
     }
 
-    public void setNativePlace(String nativePlace) {
-        this.nativePlace = nativePlace;
+    public void setNationPlace(String nationPlace) {
+        this.nationPlace = nationPlace;
     }
     public Integer getPoliticId() {
         return politicId;
@@ -243,11 +243,11 @@ public class Employee implements Serializable {
     public void setSchool(String school) {
         this.school = school;
     }
-    public LocalDate getBeginDate() {
+    public LocalDateTime getBeginDate() {
         return beginDate;
     }
 
-    public void setBeginDate(LocalDate beginDate) {
+    public void setBeginDate(LocalDateTime beginDate) {
         this.beginDate = beginDate;
     }
     public String getWorkState() {
@@ -257,12 +257,12 @@ public class Employee implements Serializable {
     public void setWorkState(String workState) {
         this.workState = workState;
     }
-    public String getWorkID() {
-        return workID;
+    public String getWorkId() {
+        return workId;
     }
 
-    public void setWorkID(String workID) {
-        this.workID = workID;
+    public void setWorkId(String workId) {
+        this.workId = workId;
     }
     public Double getContractTerm() {
         return contractTerm;
@@ -271,32 +271,32 @@ public class Employee implements Serializable {
     public void setContractTerm(Double contractTerm) {
         this.contractTerm = contractTerm;
     }
-    public LocalDate getConversionTime() {
+    public LocalDateTime getConversionTime() {
         return conversionTime;
     }
 
-    public void setConversionTime(LocalDate conversionTime) {
+    public void setConversionTime(LocalDateTime conversionTime) {
         this.conversionTime = conversionTime;
     }
-    public LocalDate getNotWorkDate() {
-        return notWorkDate;
+    public LocalDateTime getNotWorkTract() {
+        return notWorkTract;
     }
 
-    public void setNotWorkDate(LocalDate notWorkDate) {
-        this.notWorkDate = notWorkDate;
+    public void setNotWorkTract(LocalDateTime notWorkTract) {
+        this.notWorkTract = notWorkTract;
     }
-    public LocalDate getBeginContract() {
+    public LocalDateTime getBeginContract() {
         return beginContract;
     }
 
-    public void setBeginContract(LocalDate beginContract) {
+    public void setBeginContract(LocalDateTime beginContract) {
         this.beginContract = beginContract;
     }
-    public LocalDate getEndContract() {
+    public LocalDateTime getEndContract() {
         return endContract;
     }
 
-    public void setEndContract(LocalDate endContract) {
+    public void setEndContract(LocalDateTime endContract) {
         this.endContract = endContract;
     }
     public Integer getWorkAge() {
@@ -324,7 +324,7 @@ public class Employee implements Serializable {
             ", idCard=" + idCard +
             ", wedlock=" + wedlock +
             ", nationId=" + nationId +
-            ", nativePlace=" + nativePlace +
+            ", nationPlace=" + nationPlace +
             ", politicId=" + politicId +
             ", email=" + email +
             ", phone=" + phone +
@@ -338,10 +338,10 @@ public class Employee implements Serializable {
             ", school=" + school +
             ", beginDate=" + beginDate +
             ", workState=" + workState +
-            ", workID=" + workID +
+            ", workId=" + workId +
             ", contractTerm=" + contractTerm +
             ", conversionTime=" + conversionTime +
-            ", notWorkDate=" + notWorkDate +
+            ", notWorkTract=" + notWorkTract +
             ", beginContract=" + beginContract +
             ", endContract=" + endContract +
             ", workAge=" + workAge +

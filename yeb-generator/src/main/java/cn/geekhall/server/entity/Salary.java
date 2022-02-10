@@ -14,7 +14,7 @@ import io.swagger.annotations.ApiModelProperty;
  * </p>
  *
  * @author yiny
- * @since 2022-02-09
+ * @since 2022-02-10
  */
 @TableName("t_salary")
 @ApiModel(value = "Salary对象", description = "")
@@ -26,26 +26,29 @@ public class Salary implements Serializable {
     @TableId(value = "id", type = IdType.AUTO)
     private Integer id;
 
+    @ApiModelProperty("名称")
+    private String name;
+
     @ApiModelProperty("基本工资")
-    private Integer basicSalary;
+    private Double basicSalary;
 
     @ApiModelProperty("奖金")
-    private Integer bonus;
+    private Double bonus;
 
     @ApiModelProperty("午餐补助")
-    private Integer lunchSalary;
+    private Double lunchSalary;
 
     @ApiModelProperty("交通补助")
-    private Integer trafficSalary;
+    private Double trafficSalary;
 
     @ApiModelProperty("应发工资")
-    private Integer allSalary;
+    private Double allSalary;
 
-    @ApiModelProperty("养老金基数")
-    private Integer pensionBase;
+    @ApiModelProperty("养老基金数")
+    private Double pensionBase;
 
     @ApiModelProperty("养老金比率")
-    private Float pensionPer;
+    private Double pensionPer;
 
     @ApiModelProperty("启用时间")
     private LocalDateTime createDate;
@@ -62,9 +65,6 @@ public class Salary implements Serializable {
     @ApiModelProperty("公积金比率")
     private Float accumulationFundPer;
 
-    @ApiModelProperty("名称")
-    private String name;
-
     public Integer getId() {
         return id;
     }
@@ -72,53 +72,60 @@ public class Salary implements Serializable {
     public void setId(Integer id) {
         this.id = id;
     }
-    public Integer getBasicSalary() {
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+    public Double getBasicSalary() {
         return basicSalary;
     }
 
-    public void setBasicSalary(Integer basicSalary) {
+    public void setBasicSalary(Double basicSalary) {
         this.basicSalary = basicSalary;
     }
-    public Integer getBonus() {
+    public Double getBonus() {
         return bonus;
     }
 
-    public void setBonus(Integer bonus) {
+    public void setBonus(Double bonus) {
         this.bonus = bonus;
     }
-    public Integer getLunchSalary() {
+    public Double getLunchSalary() {
         return lunchSalary;
     }
 
-    public void setLunchSalary(Integer lunchSalary) {
+    public void setLunchSalary(Double lunchSalary) {
         this.lunchSalary = lunchSalary;
     }
-    public Integer getTrafficSalary() {
+    public Double getTrafficSalary() {
         return trafficSalary;
     }
 
-    public void setTrafficSalary(Integer trafficSalary) {
+    public void setTrafficSalary(Double trafficSalary) {
         this.trafficSalary = trafficSalary;
     }
-    public Integer getAllSalary() {
+    public Double getAllSalary() {
         return allSalary;
     }
 
-    public void setAllSalary(Integer allSalary) {
+    public void setAllSalary(Double allSalary) {
         this.allSalary = allSalary;
     }
-    public Integer getPensionBase() {
+    public Double getPensionBase() {
         return pensionBase;
     }
 
-    public void setPensionBase(Integer pensionBase) {
+    public void setPensionBase(Double pensionBase) {
         this.pensionBase = pensionBase;
     }
-    public Float getPensionPer() {
+    public Double getPensionPer() {
         return pensionPer;
     }
 
-    public void setPensionPer(Float pensionPer) {
+    public void setPensionPer(Double pensionPer) {
         this.pensionPer = pensionPer;
     }
     public LocalDateTime getCreateDate() {
@@ -156,18 +163,12 @@ public class Salary implements Serializable {
     public void setAccumulationFundPer(Float accumulationFundPer) {
         this.accumulationFundPer = accumulationFundPer;
     }
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
 
     @Override
     public String toString() {
         return "Salary{" +
             "id=" + id +
+            ", name=" + name +
             ", basicSalary=" + basicSalary +
             ", bonus=" + bonus +
             ", lunchSalary=" + lunchSalary +
@@ -180,7 +181,6 @@ public class Salary implements Serializable {
             ", medicalPer=" + medicalPer +
             ", accumulationFundBase=" + accumulationFundBase +
             ", accumulationFundPer=" + accumulationFundPer +
-            ", name=" + name +
         "}";
     }
 }

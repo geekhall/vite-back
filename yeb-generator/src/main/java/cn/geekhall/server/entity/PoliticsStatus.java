@@ -13,7 +13,7 @@ import io.swagger.annotations.ApiModelProperty;
  * </p>
  *
  * @author yiny
- * @since 2022-02-09
+ * @since 2022-02-10
  */
 @TableName("t_politics_status")
 @ApiModel(value = "PoliticsStatus对象", description = "")
@@ -21,11 +21,9 @@ public class PoliticsStatus implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
-    @ApiModelProperty("id")
     @TableId(value = "id", type = IdType.AUTO)
     private Integer id;
 
-    @ApiModelProperty("政治面貌")
     private String name;
 
     public Integer getId() {

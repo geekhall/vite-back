@@ -11,7 +11,7 @@ import org.springframework.stereotype.Controller;
  * </p>
  *
  * @author yiny
- * @since 2022-02-09
+ * @since 2022-02-10
  */
 @Controller
 @RequestMapping("/server/politics-status")

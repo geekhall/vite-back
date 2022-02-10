@@ -4,6 +4,7 @@ import com.baomidou.mybatisplus.annotation.IdType;
 import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
 import java.io.Serializable;
+import java.time.LocalDateTime;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 
@@ -13,7 +14,7 @@ import io.swagger.annotations.ApiModelProperty;
  * </p>
  *
  * @author yiny
- * @since 2022-02-09
+ * @since 2022-02-10
  */
 @TableName("t_department")
 @ApiModel(value = "Department对象", description = "")
@@ -39,6 +40,12 @@ public class Department implements Serializable {
 
     @ApiModelProperty("是否上级")
     private Boolean isParent;
+
+    @ApiModelProperty("创建时间")
+    private LocalDateTime createDate;
+
+    @ApiModelProperty("备注")
+    private String remark;
 
     public Integer getId() {
         return id;
@@ -82,6 +89,20 @@ public class Department implements Serializable {
     public void setIsParent(Boolean isParent) {
         this.isParent = isParent;
     }
+    public LocalDateTime getCreateDate() {
+        return createDate;
+    }
+
+    public void setCreateDate(LocalDateTime createDate) {
+        this.createDate = createDate;
+    }
+    public String getRemark() {
+        return remark;
+    }
+
+    public void setRemark(String remark) {
+        this.remark = remark;
+    }
 
     @Override
     public String toString() {
@@ -92,6 +113,8 @@ public class Department implements Serializable {
             ", depPath=" + depPath +
             ", enabled=" + enabled +
             ", isParent=" + isParent +
+            ", createDate=" + createDate +
+            ", remark=" + remark +
         "}";
     }
 }

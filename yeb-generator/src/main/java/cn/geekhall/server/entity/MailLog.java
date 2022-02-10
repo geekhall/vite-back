@@ -12,7 +12,7 @@ import io.swagger.annotations.ApiModelProperty;
  * </p>
  *
  * @author yiny
- * @since 2022-02-09
+ * @since 2022-02-10
  */
 @TableName("t_mail_log")
 @ApiModel(value = "MailLog对象", description = "")
@@ -24,9 +24,9 @@ public class MailLog implements Serializable {
     private String msgId;
 
     @ApiModelProperty("接收员工id")
-    private Integer eid;
+    private Integer eId;
 
-    @ApiModelProperty("状态（0:消息投递中 1:投递成功 2:投递失败）")
+    @ApiModelProperty("状态(0:消息投递中1:投递成功2:投递失败)")
     private Integer status;
 
     @ApiModelProperty("路由键")
@@ -54,12 +54,12 @@ public class MailLog implements Serializable {
     public void setMsgId(String msgId) {
         this.msgId = msgId;
     }
-    public Integer getEid() {
-        return eid;
+    public Integer geteId() {
+        return eId;
     }
 
-    public void setEid(Integer eid) {
-        this.eid = eid;
+    public void seteId(Integer eId) {
+        this.eId = eId;
     }
     public Integer getStatus() {
         return status;
@@ -115,7 +115,7 @@ public class MailLog implements Serializable {
     public String toString() {
         return "MailLog{" +
             "msgId=" + msgId +
-            ", eid=" + eid +
+            ", eId=" + eId +
             ", status=" + status +
             ", routeKey=" + routeKey +
             ", exchange=" + exchange +

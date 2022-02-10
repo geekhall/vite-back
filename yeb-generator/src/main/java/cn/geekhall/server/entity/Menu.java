@@ -13,7 +13,7 @@ import io.swagger.annotations.ApiModelProperty;
  * </p>
  *
  * @author yiny
- * @since 2022-02-09
+ * @since 2022-02-10
  */
 @TableName("t_menu")
 @ApiModel(value = "Menu对象", description = "")
@@ -28,13 +28,13 @@ public class Menu implements Serializable {
     @ApiModelProperty("url")
     private String url;
 
-    @ApiModelProperty("path")
+    @ApiModelProperty("路径")
     private String path;
 
-    @ApiModelProperty("组件")
+    @ApiModelProperty("组件名称")
     private String component;
 
-    @ApiModelProperty("菜单名")
+    @ApiModelProperty("菜单名称")
     private String name;
 
     @ApiModelProperty("图标")

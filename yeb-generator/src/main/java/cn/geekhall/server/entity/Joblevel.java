@@ -14,7 +14,7 @@ import io.swagger.annotations.ApiModelProperty;
  * </p>
  *
  * @author yiny
- * @since 2022-02-09
+ * @since 2022-02-10
  */
 @TableName("t_joblevel")
 @ApiModel(value = "Joblevel对象", description = "")
@@ -22,7 +22,7 @@ public class Joblevel implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
-    @ApiModelProperty("id")
+    @ApiModelProperty("职称管理id")
     @TableId(value = "id", type = IdType.AUTO)
     private Integer id;
 

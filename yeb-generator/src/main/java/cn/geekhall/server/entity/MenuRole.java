@@ -1,9 +1,8 @@
 package cn.geekhall.server.entity;
 
-import com.baomidou.mybatisplus.annotation.IdType;
-import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
 import java.io.Serializable;
+import java.time.LocalDateTime;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 
@@ -13,7 +12,7 @@ import io.swagger.annotations.ApiModelProperty;
  * </p>
  *
  * @author yiny
- * @since 2022-02-09
+ * @since 2022-02-10
  */
 @TableName("t_menu_role")
 @ApiModel(value = "MenuRole对象", description = "")
@@ -21,23 +20,18 @@ public class MenuRole implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
-    @ApiModelProperty("id")
-    @TableId(value = "id", type = IdType.AUTO)
-    private Integer id;
-
     @ApiModelProperty("菜单id")
     private Integer mid;
 
-    @ApiModelProperty("权限id")
+    @ApiModelProperty("角色id")
     private Integer rid;
 
-    public Integer getId() {
-        return id;
-    }
+    @ApiModelProperty("创建时间")
+    private LocalDateTime gmtCreate;
 
-    public void setId(Integer id) {
-        this.id = id;
-    }
+    @ApiModelProperty("备注")
+    private String remark;
+
     public Integer getMid() {
         return mid;
     }
@@ -52,13 +46,28 @@ public class MenuRole implements Serializable {
     public void setRid(Integer rid) {
         this.rid = rid;
     }
+    public LocalDateTime getGmtCreate() {
+        return gmtCreate;
+    }
+
+    public void setGmtCreate(LocalDateTime gmtCreate) {
+        this.gmtCreate = gmtCreate;
+    }
+    public String getRemark() {
+        return remark;
+    }
+
+    public void setRemark(String remark) {
+        this.remark = remark;
+    }
 
     @Override
     public String toString() {
         return "MenuRole{" +
-            "id=" + id +
-            ", mid=" + mid +
+            "mid=" + mid +
             ", rid=" + rid +
+            ", gmtCreate=" + gmtCreate +
+            ", remark=" + remark +
         "}";
     }
 }
