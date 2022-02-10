@@ -4,7 +4,7 @@ server:
 
 spring:
   datasource:
-    driver-class-name: com.mysql.jdbc.Driver
+    driver-class-name: com.mysql.cj.jdbc.Driver
     url: jdbc:mysql://localhost:3316/yeb?userUnicode=true&characterEncoding=UTF-8&serverTimezone=Asia/Shanghai
     username: yeb
     password: 123456
