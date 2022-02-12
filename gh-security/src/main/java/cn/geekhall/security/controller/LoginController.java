@@ -16,4 +16,17 @@ public class LoginController {
         System.out.println("执行登录方法");
         return "redirect:main.html";
     }
+
+    @RequestMapping("home")
+    public String home(){
+        System.out.println("执行 home 方法");
+        return "redirect:main.html";
+    }
+
+    @RequestMapping("error")
+    public String error(){
+        System.out.println("执行 error 方法");
+        return "redirect:error.html";
+    }
+
 }
